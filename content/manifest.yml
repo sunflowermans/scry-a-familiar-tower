@@ -1,0 +1,20 @@
+schema_version: 1
+id: a-familiar-tower
+kind: adventure
+title: "A Familiar Tower"
+version: "1.1"
+variant: full-art
+license:
+  text: "CC-BY-NC-4.0"
+  art: "all-rights-reserved"
+requires:
+  rulesets: [ose]
+  plugins:
+    - jekyll-image-links
+    - jekyll-dice-tray
+    - jekyll-hover-popup
+nav:
+  order: 3
+include:
+  - docs/**
+  - assets/**
