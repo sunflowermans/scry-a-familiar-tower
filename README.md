@@ -8,6 +8,7 @@ Text is licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ```
 scry-a-familiar-tower/
+├── lib/scry-a-familiar-tower.rb  # no-op require stub
 ├── content/
 │   ├── manifest.yml
 │   ├── docs/a-familiar-tower.md
@@ -17,14 +18,15 @@ scry-a-familiar-tower/
 └── README.md
 ```
 
-## Install (path)
+## Install
 
 ```ruby
 group :jekyll_plugins do
-  gem "jekyll-scry-content", path: "../jekyll-scry-content"
+  gem "jekyll-scry-content", "~> 0.3"
 end
 
-gem "scry-a-familiar-tower", path: "../scry-a-familiar-tower"
+gem "scry-a-familiar-tower", "~> 1.1"  # pulls scry-rpg-callouts; pin the gemspec version
+# gem "scry-ose-rules", "~> 1.0"       # optional; needed for in-adventure rules links
 ```
 
-Requires `jekyll-scry-content` in the host site's `plugins:` list. Soft-depends on an OSE ruleset content gem for in-adventure rules links, and on `scry-rpg-callouts` for monster/item callouts.
+Requires `jekyll-scry-content` **0.3+** and `scry-rpg-callouts` **1.0.2+** (gemspec dependencies). Keep the loader in the host `:jekyll_plugins` group and `plugins:` list so its hooks run. Soft-depends on an OSE ruleset content gem for in-adventure rules links — add `scry-ose-rules` on the host if you want that tree.
